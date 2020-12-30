@@ -1,0 +1,39 @@
+body {
+   margin: 0;
+   height: 100%;
+}
+
+.app-container {
+   height: calc(100vh - 35px);
+   display: grid;
+   grid-template-rows: 30px 1fr 30px;
+}
+
+header {
+   flex-shrink: 0;
+}
+
+.app-content {
+   overflow-y: scroll;
+}
+
+footer {
+   flex-shrink: 0;
+}
+
+.pagination {
+   margin: 0;
+}
+
+.book-col {
+   margin: 1.5rem 0;
+}
+
+.page-item.active .page-link {
+   background-color: #55595c;
+   border-color: #55595c;
+}
+
+.page-link {
+   color: #55595c;
+}

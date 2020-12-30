@@ -7,12 +7,12 @@ export default function BookList(props) {
    const [dataSource, setDataSource] = useState(null)
 
    useEffect(() => {
-      if (searchBook) {
-         fetchDataSource(searchBook)
-      }
-
       fetchDataSource()
-   }, [currentPage, searchBook])
+   }, [currentPage])
+
+   useEffect(() => {
+      fetchDataSource(searchBook)
+   }, [searchBook])
 
    // Fetch new datasource from api
    const fetchDataSource = (searchString) => {
@@ -23,6 +23,7 @@ export default function BookList(props) {
 
       if (searchString) {
          params.search = searchString
+         params.page = 1
       }
 
       axios.get(`http://localhost:3000/books`, { params }).then(({ data }) => {
